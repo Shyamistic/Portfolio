@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI/ML Portfolio // Shyam Sharma</title>
-    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Font: 'Share Tech Mono' for that 90s digital feel --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Font: Share Tech Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
@@ -225,10 +228,14 @@
 </head>
 <body class="antialiased">
 
-    <!-- Main container --><div class="relative z-10 container mx-auto max-w-5xl p-4 md:p-8">
+    <!-- Container -->
+    <div class="relative z-10 container mx-auto max-w-5xl p-4 md:p-8">
 
-        <!-- Header/Hero Section --><header class="flex flex-col-reverse sm:flex-row items-center justify-between mb-16">
-            <!-- Left Side: Title & Info --><div class="w-full sm:w-2/3 text-center sm:text-left mt-8 sm:mt-0">
+        <!-- Header Section -->
+        <header class="flex flex-col-reverse sm:flex-row items-center justify-between mb-16">
+            
+            <!-- Left Side: Title & Nav -->
+            <div class="w-full sm:w-2/3 text-center sm:text-left mt-8 sm:mt-0">
                 <h1 class="glitch text-4xl md:text-5xl lg:text-6xl" data-text="SHYAM SHARMA">SHYAM SHARMA</h1>
                 <h2 class="text-xl md:text-2xl text-pink-400 font-bold tracking-widest mt-2">
                     AI/ML ENGINEER // NEO-TOKYO DATA-SAMURAI
@@ -236,7 +243,9 @@
                 <p class="text-lg text-cyan-400 mt-2">
                     人工知能 | マシンラーニング | 侍
                 </p>
-                <!-- NAV --><nav class="mt-6 text-lg">
+                
+                <!-- Navigation -->
+                <nav class="mt-6 text-lg">
                     <a href="#about" class="cyber-link mr-4">[ ABOUT ]</a>
                     <a href="#projects" class="cyber-link mr-4">[ PROJECTS ]</a>
                     <a href="#experience" class="cyber-link mr-4">[ EXPERIENCE ]</a>
@@ -244,16 +253,24 @@
                 </nav>
             </div>
             
-            <!-- Right Side: Your Picture --><div class="w-1/2 sm:w-1/3 flex justify-center sm:justify-end">
-                <img src="https://i.imgur.com/xTf231S.jpg" 
+            <!-- Right Side: Your Picture -->
+            <div class="w-1/2 sm:w-1/3 flex justify-center sm:justify-end">
+                <!-- 
+                  UPDATED IMAGE LINK:
+                  This now points to the 'profile.jpg' file you uploaded to your repository,
+                  instead of the broken 'i.imgur.com' link.
+                -->
+                <img src="profile.jpg" 
                      alt="A portrait of Shyam Sharma" 
                      class="cyber-img rounded-full w-40 h-40 md:w-48 md:h-48 object-cover">
             </div>
         </header>
 
-        <!-- Main Content --><main>
+        <!-- Main Content -->
+        <main>
 
-            <!-- About Section --><section id="about" class="mb-16">
+            <!-- About Section -->
+            <section id="about" class="mb-16">
                 <h3 class="section-header text-2xl md:text-3xl font-bold mb-6">// 01_ABOUT [アバウト]</h3>
                 <p class="text-lg leading-relaxed">
                     Greetings. I am Shyam Sharma, a 22-year-old aspiring AI/ML Engineer currently forging my path through a Master's in Computer Applications (MCA) at the prestigious IIT Patna and IIIT Ranchi. My journey into the digital realm began with an insatiable curiosity for how intelligent systems can reshape our world.
@@ -266,11 +283,13 @@
                 </p>
             </section>
 
-            <!-- Projects Section --><section id="projects" class="mb-16">
+            <!-- Projects Section -->
+            <section id="projects" class="mb-16">
                 <h3 class="section-header text-2xl md:text-3xl font-bold mb-6">// 02_PROJECTS [プロジェクト]</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                    <!-- Project Card: Agribot --><div class="cyber-card p-6 rounded-lg">
+                    <!-- Project: Agribot -->
+                    <div class="cyber-card p-6 rounded-lg">
                         <h4 class="text-xl text-pink-400 font-bold mb-2">Agribot: The AI Co-Pilot for Indian Farmers</h4>
                         <div class="mb-3">
                             <span class="cyber-tag">Streamlit</span>
@@ -286,7 +305,8 @@
                         <a href="https://agribot30-edoa3fhyflvc7g2z8pb2jo.streamlit.app/" class="cyber-link font-bold" target="_blank">[ Live Demo ]</a>
                     </div>
 
-                    <!-- Project Card: Hybrid Agent Core (HAC) --><div class="cyber-card p-6 rounded-lg">
+                    <!-- Project: Hybrid Agent Core -->
+                    <div class="cyber-card p-6 rounded-lg">
                         <h4 class="text-xl text-pink-400 font-bold mb-2">Hybrid Agent Core (HAC)</h4>
                         <div class="mb-3">
                             <span class="cyber-tag">Agentic AI</span>
@@ -298,9 +318,12 @@
                         <p class="mb-4 text-sm">
                             A full-stack, multimodal AI assistant with dynamic conflict resolution and real-world tool integration. Intelligently routes queries between a Cognitive Analysis Pipeline (for nuance) and an Agentic Tool-Use Pipeline (for actions), accepting diverse inputs (image, PDF, voice).
                         </p>
-                        <a href="#" class="cyber-link font-bold mr-4" target="_blank">[ Video Demo ]</a> <!-- Update with actual video link --><a href="#" class="cyber-link font-bold" target="_blank">[ GitHub Repo ]</a> <!-- Update with actual GitHub link --></div>
+                        <a href="#" class="cyber-link font-bold mr-4" target="_blank">[ Video Demo ]</a> <!-- Add your link here -->
+                        <a href="#" class="cyber-link font-bold" target="_blank">[ GitHub Repo ]</a> <!-- Add your link here -->
+                    </div>
                     
-                    <!-- Project Card: Aarogya-Verify --><div class="cyber-card p-6 rounded-lg">
+                    <!-- Project: Aarogya-Verify -->
+                    <div class="cyber-card p-6 rounded-lg">
                         <h4 class="text-xl text-pink-400 font-bold mb-2">Aarogya-Verify: Agentic AI for Healthcare Data Validation</h4>
                         <div class="mb-3">
                             <span class="cyber-tag">CrewAI</span>
@@ -315,7 +338,8 @@
                         <a href="https://aarogya-app-oryt.onrender.com/" class="cyber-link font-bold" target="_blank">[ Live Demo ]</a>
                     </div>
 
-                    <!-- Project Card: GUARDIAN --><div class="cyber-card p-6 rounded-lg">
+                    <!-- Project: GUARDIAN -->
+                    <div class="cyber-card p-6 rounded-lg">
                         <h4 class="text-xl text-pink-400 font-bold mb-2">GUARDIAN — Vehicle Tracking & Security Platform</h4>
                         <div class="mb-3">
                             <span class="cyber-tag">Python</span>
@@ -331,7 +355,8 @@
                         <a href="https://guardian-2-sfa9.onrender.com/api/health" class="cyber-link font-bold" target="_blank">[ Live Demo ]</a>
                     </div>
 
-                    <!-- Project Card: Papaya Maturity and Supply Chain Risk Quantifier --><div class="cyber-card p-6 rounded-lg">
+                    <!-- Project: Papaya Maturity -->
+                    <div class="cyber-card p-6 rounded-lg">
                         <h4 class="text-xl text-pink-400 font-bold mb-2">Papaya Maturity and Supply Chain Risk Quantifier</h4>
                         <div class="mb-3">
                             <span class="cyber-tag">TensorFlow</span>
@@ -343,9 +368,12 @@
                         <p class="mb-4 text-sm">
                             A groundbreaking, statistically reliable computer vision system for produce quality. Fuses Multi-Task Learning (MTL) and Uncertainty Quantification (UQ) via MCDO to provide auditable quality metrics (95% confidence intervals) for perishable goods, reducing financial risk.
                         </p>
-                        <a href="#" class="cyber-link font-bold mr-4" target="_blank">[ GitHub Repo ]</a> <!-- Update with actual GitHub link --><a href="#" class="cyber-link font-bold" target="_blank">[ Live Demo ]</a> <!-- Update with actual Live Demo link --></div>
+                        <a href="#" class="cyber-link font-bold mr-4" target="_blank">[ GitHub Repo ]</a> <!-- Add your link here -->
+                        <a href="#" class="cyber-link font-bold" target="_blank">[ Live Demo ]</a> <!-- Add your link here -->
+                    </div>
 
-                    <!-- Project Card: AudioVerse --><div class="cyber-card p-6 rounded-lg">
+                    <!-- Project: AudioVerse -->
+                    <div class="cyber-card p-6 rounded-lg">
                         <h4 class="text-xl text-pink-400 font-bold mb-2">AudioVerse - Full-Stack Music Production & Discovery</h4>
                         <div class="mb-3">
                             <span class="cyber-tag">Next.js</span>
@@ -356,16 +384,19 @@
                         <p class="mb-4 text-sm">
                             A prototype for a next-gen music platform combining a discovery feed with an in-browser recording studio and AI-powered beat generation. Built with Next.js, it leverages MediaRecorder and Tone.js for high-quality audio creation directly in the browser.
                         </p>
-                        <a href="#" class="cyber-link font-bold mr-4" target="_blank">[ GitHub Repo ]</a> <!-- Update with actual GitHub link --></div>
+                        <a href="#" class="cyber-link font-bold mr-4" target="_blank">[ GitHub Repo ]</a> <!-- Add your link here -->
+                    </div>
 
                 </div>
             </section>
 
-            <!-- Experience Section --><section id="experience" class="mb-16">
+            <!-- Experience Section -->
+            <section id="experience" class="mb-16">
                 <h3 class="section-header text-2xl md:text-3xl font-bold mb-6">// 03_EXPERIENCE [経験]</h3>
                 <div class="space-y-8">
                     
-                    <!-- Experience Item 1: AI/ML Internship (during Bachelor's) --><div class="timeline-item">
+                    <!-- Experience Item 1: AI/ML Internship -->
+                    <div class="timeline-item">
                         <h4 class="text-xl text-pink-400 font-bold">AI/ML Intern</h4>
                         <p class="text-lg text-cyan-400">Sokabo Software (Japan-based Product Company) // March 2024 – Jan 2026</p>
                         <ul class="list-disc list-outside ml-5 mt-2 text-base">
@@ -376,16 +407,13 @@
                         </ul>
                     </div>
 
-                    <!-- Experience Item 2: Add any other relevant experience here if applicable --><!-- <div class="timeline-item">
-                        <h4 class="text-xl text-pink-400 font-bold">Another Role</h4>
-                        <p class="text-lg text-cyan-400">Another Company // Date - Date</p>
-                        <ul class="list-disc list-outside ml-5 mt-2 text-base">
-                            <li>Description of responsibilities and achievements.</li>
-                        </ul>
-                    </div> --></div>
+                    <!-- You can add more timeline-items here as your experience grows -->
+
+                </div>
             </section>
 
-            <!-- Contact Section --><section id="contact" class="mb-16 text-center">
+            <!-- Contact Section -->
+            <section id="contact" class="mb-16 text-center">
                 <h3 class="section-header text-2xl md:text-3xl font-bold mb-6">// 04_CONTACT [連絡]</h3>
                 <p class="text-lg mb-4">My mainframe is open for connections. Send your transmission to secure the future.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -402,7 +430,8 @@
 
         </main>
 
-        <!-- Footer --><footer class="border-t border-gray-700 pt-6 text-center text-gray-500">
+        <!-- Footer -->
+        <footer class="border-t border-gray-700 pt-6 text-center text-gray-500">
             <div class="flex justify-center space-x-6 mb-4">
                 <a href="https://github.com/Shyamistic" class="cyber-link text-lg" target="_blank">[ GitHub ]</a>
                 <a href="https://www.linkedin.com/in/shyam-sharma-5bb919343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="cyber-link text-lg" target="_blank">[ LinkedIn ]</a>
@@ -415,5 +444,9 @@
 
 </body>
 </html>
+
+
+
+
 
 
