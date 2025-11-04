@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI/ML Portfolio // Shyam Sharma</title>
+    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Font: 'Share Tech Mono' for that 90s digital feel --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Custom Styles for the Cybersamurai Theme --- */
+
+        :root {
+            --bg-color: #0d0d0d;
+            --text-color: #c5c5c5;
+            --neon-pink: #ff00c1;
+            --neon-cyan: #00fffb;
+            --card-bg: #1a1a1a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Scanlines overlay effect for that 90s CRT monitor feel */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0) 0,
+                rgba(0, 0, 0, 0.3) 1px,
+                rgba(0, 0, 0, 0) 2px
+            );
+            z-index: 1000;
+            pointer-events: none;
+            animation: scanline 10s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100px; }
+        }
+
+        /* Glitch effect for the main heading */
+        .glitch {
+            position: relative;
+            font-weight: bold;
+            color: #f0f0f0; /* White */
+            animation: glitch-shake 2.5s infinite;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--neon-pink);
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            animation: glitch-anim-1 2.5s infinite;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 var(--neon-cyan);
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+            animation: glitch-anim-2 2.5s infinite;
+        }
+
+        @keyframes glitch-anim-1 {
+            0% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
+            10% { clip-path: polygon(0 20%, 100% 20%, 100% 65%, 0 65%); }
+            20% { clip-path: polygon(0 40%, 100% 40%, 100% 85%, 0 85%); }
+            30% { clip-path: polygon(0 10%, 100% 10%, 100% 55%, 0 55%); }
+            40% { clip-path: polygon(0 30%, 100% 30%, 100% 75%, 0 75%); }
+            50% { clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%); }
+            60% { clip-path: polygon(0 15%, 100% 15%, 100% 60%, 0 60%); }
+            70% { clip-path: polygon(0 35%, 100% 35%, 100% 80%, 0 80%); }
+            80% { clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%); }
+            90% { clip-path: polygon(0 25%, 100% 25%, 100% 70%, 0 70%); }
+            100% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% { clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%); }
+            10% { clip-path: polygon(0 35%, 100% 35%, 100% 80%, 0 80%); }
+            20% { clip-path: polygon(0 15%, 100% 15%, 100% 60%, 0 60%); }
+            30% { clip-path: polygon(0 45%, 100% 45%, 100% 90%, 0 90%); }
+            40% { clip-path: polygon(0 25%, 100% 25%, 100% 70%, 0 70%); }
+            50% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
+            60% { clip-path: polygon(0 40%, 100% 40%, 100% 85%, 0 85%); }
+            70% { clip-path: polygon(0 20%, 100% 20%, 100% 65%, 0 65%); }
+            80% { clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%); }
+            90% { clip-path: polygon(0 30%, 100% 30%, 100% 75%, 0 75%); }
+            100% { clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%); }
+        }
+        
+        @keyframes glitch-shake {
+            0%, 100% { transform: none; }
+            25% { transform: skewX(5deg) translateX(-5px); }
+            75% { transform: skewX(-5deg) translateX(5px); }
+        }
+
+        /* Cyber-styled image */
+        .cyber-img {
+            border: 2px solid var(--neon-pink);
+            filter: grayscale(80%) contrast(1.2) brightness(1.1);
+            box-shadow: 0 0 15px 5px rgba(255, 0, 193, 0.3); /* Pink glow */
+            transition: all 0.3s ease;
+        }
+        .cyber-img:hover {
+            filter: grayscale(0%) contrast(1.0) brightness(1.0);
+            box-shadow: 0 0 25px 10px rgba(255, 0, 193, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* Section Headers */
+        .section-header {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan);
+        }
+        .section-header::before {
+            content: '[ ';
+            color: var(--neon-pink);
+        }
+        .section-header::after {
+            content: ' ]';
+            color: var(--neon-pink);
+        }
+
+        /* Project Cards */
+        .cyber-card {
+            background-color: var(--card-bg);
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .cyber-card:hover {
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 20px rgba(255, 0, 193, 0.5);
+            transform: translateY(-5px);
+        }
+
+        /* Tech Tags */
+        .cyber-tag {
+            display: inline-block;
+            background-color: var(--neon-pink);
+            color: var(--bg-color);
+            padding: 2px 8px;
+            font-size: 0.75rem; /* 12px */
+            font-weight: bold;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 0% 100%); /* Angled edge */
+        }
+
+        /* Links */
+        .cyber-link {
+            color: var(--neon-cyan);
+            text-decoration: none;
+            position: relative;
+        }
+        .cyber-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--neon-cyan);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        .cyber-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .cyber-link:hover {
+            text-shadow: 0 0 5px var(--neon-cyan);
+        }
+        
+        /* Experience Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem; /* 32px */
+            border-left: 2px solid var(--neon-pink); /* Neon Pink */
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px; /* Adjust to center on the line */
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background: var(--neon-pink);
+            border: 2px solid var(--bg-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--neon-pink);
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Main container --><div class="relative z-10 container mx-auto max-w-5xl p-4 md:p-8">
+
+        <!-- Header/Hero Section --><header class="flex flex-col-reverse sm:flex-row items-center justify-between mb-16">
+            <!-- Left Side: Title & Info --><div class="w-full sm:w-2/3 text-center sm:text-left mt-8 sm:mt-0">
+                <h1 class="glitch text-4xl md:text-5xl lg:text-6xl" data-text="SHYAM SHARMA">SHYAM SHARMA</h1>
+                <h2 class="text-xl md:text-2xl text-pink-400 font-bold tracking-widest mt-2">
+                    AI/ML ENGINEER // NEO-TOKYO DATA-SAMURAI
+                </h2>
+                <p class="text-lg text-cyan-400 mt-2">
+                    人工知能 | マシンラーニング | 侍
+                </p>
+                <!-- NAV --><nav class="mt-6 text-lg">
+                    <a href="#about" class="cyber-link mr-4">[ ABOUT ]</a>
+                    <a href="#projects" class="cyber-link mr-4">[ PROJECTS ]</a>
+                    <a href="#experience" class="cyber-link mr-4">[ EXPERIENCE ]</a>
+                    <a href="#contact" class="cyber-link">[ CONTACT ]</a>
+                </nav>
+            </div>
+            
+            <!-- Right Side: Your Picture --><div class="w-1/2 sm:w-1/3 flex justify-center sm:justify-end">
+                <img src="https://i.imgur.com/xTf231S.jpg" 
+                     alt="A portrait of Shyam Sharma" 
+                     class="cyber-img rounded-full w-40 h-40 md:w-48 md:h-48 object-cover">
+            </div>
+        </header>
+
+        <!-- Main Content --><main>
+
+            <!-- About Section --><section id="about" class="mb-16">
+                <h3 class="section-header text-2xl md:text-3xl font-bold mb-6">// 01_ABOUT [アバウト]</h3>
+                <p class="text-lg leading-relaxed">
+                    Greetings. I am Shyam Sharma, a 22-year-old aspiring AI/ML Engineer currently forging my path through a Master's in Computer Applications (MCA) at the prestigious IIT Patna and IIIT Ranchi. My journey into the digital realm began with an insatiable curiosity for how intelligent systems can reshape our world.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    My dedication to mastering cutting-edge technology is evident in the diverse and complex projects I've built, ranging from AI co-pilots for farmers to multimodal agentic systems and robust healthcare data validators. I thrive on transforming intricate problems into elegant, data-driven solutions. My expertise spans Python, TensorFlow, PyTorch, Scikit-learn, deep learning, computer vision, natural language processing, and full-stack development with modern frameworks like Next.js and Streamlit.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    I am keenly interested in high-impact roles that push the boundaries of what AI can achieve, and I'm actively seeking a remote AI/ML internship where I can apply my advanced skills, learn from industry pioneers, and contribute to groundbreaking innovations. My mission is to craft intelligent systems that are not just functional, but also trustworthy, accessible, and scalable.
+                </p>
+            </section>
+
+            <!-- Projects Section --><section id="projects" class="mb-16">
+                <h3 class="section-header text-2xl md:text-3xl font-bold mb-6">// 02_PROJECTS [プロジェクト]</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- Project Card: Agribot --><div class="cyber-card p-6 rounded-lg">
+                        <h4 class="text-xl text-pink-400 font-bold mb-2">Agribot: The AI Co-Pilot for Indian Farmers</h4>
+                        <div class="mb-3">
+                            <span class="cyber-tag">Streamlit</span>
+                            <span class="cyber-tag">Scikit-learn</span>
+                            <span class="cyber-tag">TensorFlow</span>
+                            <span class="cyber-tag">NLP</span>
+                            <span class="cyber-tag">APIs</span>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            An AI-powered, all-in-one smart farming dashboard designed to move Indian agriculture from "farming by chance" to "farming by choice" through accessible, data-driven insights. Features include Smart Yield AI with actionable advice, instant Hindi translation, live weather & market data, and IoT-ready simulation.
+                        </p>
+                        <a href="https://github.com/Shyamistic/Agribot3.0" class="cyber-link font-bold mr-4" target="_blank">[ GitHub Repo ]</a>
+                        <a href="https://agribot30-edoa3fhyflvc7g2z8pb2jo.streamlit.app/" class="cyber-link font-bold" target="_blank">[ Live Demo ]</a>
+                    </div>
+
+                    <!-- Project Card: Hybrid Agent Core (HAC) --><div class="cyber-card p-6 rounded-lg">
+                        <h4 class="text-xl text-pink-400 font-bold mb-2">Hybrid Agent Core (HAC)</h4>
+                        <div class="mb-3">
+                            <span class="cyber-tag">Agentic AI</span>
+                            <span class="cyber-tag">Gemini Pro</span>
+                            <span class="cyber-tag">Multimodal</span>
+                            <span class="cyber-tag">Node.js</span>
+                            <span class="cyber-tag">Firestore</span>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            A full-stack, multimodal AI assistant with dynamic conflict resolution and real-world tool integration. Intelligently routes queries between a Cognitive Analysis Pipeline (for nuance) and an Agentic Tool-Use Pipeline (for actions), accepting diverse inputs (image, PDF, voice).
+                        </p>
+                        <a href="#" class="cyber-link font-bold mr-4" target="_blank">[ Video Demo ]</a> <!-- Update with actual video link --><a href="#" class="cyber-link font-bold" target="_blank">[ GitHub Repo ]</a> <!-- Update with actual GitHub link --></div>
+                    
+                    <!-- Project Card: Aarogya-Verify --><div class="cyber-card p-6 rounded-lg">
+                        <h4 class="text-xl text-pink-400 font-bold mb-2">Aarogya-Verify: Agentic AI for Healthcare Data Validation</h4>
+                        <div class="mb-3">
+                            <span class="cyber-tag">CrewAI</span>
+                            <span class="cyber-tag">Agentic AI</span>
+                            <span class="cyber-tag">OCR</span>
+                            <span class="cyber-tag">Streamlit</span>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            An autonomous multi-agent AI platform that audits and validates healthcare provider data. Reduces operational costs and ensures accurate patient information by automating validation, unstructured data extraction (OCR), and intelligent auditing with a "Confidence Score."
+                        </p>
+                        <a href="https://github.com/Shyamistic/aarogya-verify-hackathon" class="cyber-link font-bold mr-4" target="_blank">[ GitHub Repo ]</a>
+                        <a href="https://aarogya-app-oryt.onrender.com/" class="cyber-link font-bold" target="_blank">[ Live Demo ]</a>
+                    </div>
+
+                    <!-- Project Card: GUARDIAN --><div class="cyber-card p-6 rounded-lg">
+                        <h4 class="text-xl text-pink-400 font-bold mb-2">GUARDIAN — Vehicle Tracking & Security Platform</h4>
+                        <div class="mb-3">
+                            <span class="cyber-tag">Python</span>
+                            <span class="cyber-tag">Streamlit</span>
+                            <span class="cyber-tag">Flask</span>
+                            <span class="cyber-tag">GPS</span>
+                            <span class="cyber-tag">Cloud Deploy</span>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            An advanced, scalable vehicle tracking and security platform. Securely connects GPS modules for real-time location monitoring, status updates, and alerts via a cloud-based backend. Features a RESTful API with health checks, engineered for multi-country deployment.
+                        </p>
+                        <a href="https://github.com/Shyamistic/GUARDIAN" class="cyber-link font-bold mr-4" target="_blank">[ GitHub Repo ]</a>
+                        <a href="https://guardian-2-sfa9.onrender.com/api/health" class="cyber-link font-bold" target="_blank">[ Live Demo ]</a>
+                    </div>
+
+                    <!-- Project Card: Papaya Maturity and Supply Chain Risk Quantifier --><div class="cyber-card p-6 rounded-lg">
+                        <h4 class="text-xl text-pink-400 font-bold mb-2">Papaya Maturity and Supply Chain Risk Quantifier</h4>
+                        <div class="mb-3">
+                            <span class="cyber-tag">TensorFlow</span>
+                            <span class="cyber-tag">Keras</span>
+                            <span class="cyber-tag">Computer Vision</span>
+                            <span class="cyber-tag">UQ</span>
+                            <span class="cyber-tag">MTL</span>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            A groundbreaking, statistically reliable computer vision system for produce quality. Fuses Multi-Task Learning (MTL) and Uncertainty Quantification (UQ) via MCDO to provide auditable quality metrics (95% confidence intervals) for perishable goods, reducing financial risk.
+                        </p>
+                        <a href="#" class="cyber-link font-bold mr-4" target="_blank">[ GitHub Repo ]</a> <!-- Update with actual GitHub link --><a href="#" class="cyber-link font-bold" target="_blank">[ Live Demo ]</a> <!-- Update with actual Live Demo link --></div>
+
+                    <!-- Project Card: AudioVerse --><div class="cyber-card p-6 rounded-lg">
+                        <h4 class="text-xl text-pink-400 font-bold mb-2">AudioVerse - Full-Stack Music Production & Discovery</h4>
+                        <div class="mb-3">
+                            <span class="cyber-tag">Next.js</span>
+                            <span class="cyber-tag">React</span>
+                            <span class="cyber-tag">Web Audio API</span>
+                            <span class="cyber-tag">AI Gen</span>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            A prototype for a next-gen music platform combining a discovery feed with an in-browser recording studio and AI-powered beat generation. Built with Next.js, it leverages MediaRecorder and Tone.js for high-quality audio creation directly in the browser.
+                        </p>
+                        <a href="#" class="cyber-link font-bold mr-4" target="_blank">[ GitHub Repo ]</a> <!-- Update with actual GitHub link --></div>
+
+                </div>
+            </section>
+
+            <!-- Experience Section --><section id="experience" class="mb-16">
+                <h3 class="section-header text-2xl md:text-3xl font-bold mb-6">// 03_EXPERIENCE [経験]</h3>
+                <div class="space-y-8">
+                    
+                    <!-- Experience Item 1: AI/ML Internship (during Bachelor's) --><div class="timeline-item">
+                        <h4 class="text-xl text-pink-400 font-bold">AI/ML Intern</h4>
+                        <p class="text-lg text-cyan-400">Sokabo Software (Japan-based Product Company) // March 2024 – Jan 2026</p>
+                        <ul class="list-disc list-outside ml-5 mt-2 text-base">
+                            <li>Developed and optimized machine learning models for [specific task, e.g., 'predictive analytics for customer churn'].</li>
+                            <li>Contributed to data preprocessing and feature engineering, significantly improving model performance.</li>
+                            <li>Assisted in deploying AI solutions, gaining practical experience with real-world integration challenges.</li>
+                            <li>Researched and implemented cutting-edge algorithms to solve [specific problem], demonstrating initiative and problem-solving skills.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Experience Item 2: Add any other relevant experience here if applicable --><!-- <div class="timeline-item">
+                        <h4 class="text-xl text-pink-400 font-bold">Another Role</h4>
+                        <p class="text-lg text-cyan-400">Another Company // Date - Date</p>
+                        <ul class="list-disc list-outside ml-5 mt-2 text-base">
+                            <li>Description of responsibilities and achievements.</li>
+                        </ul>
+                    </div> --></div>
+            </section>
+
+            <!-- Contact Section --><section id="contact" class="mb-16 text-center">
+                <h3 class="section-header text-2xl md:text-3xl font-bold mb-6">// 04_CONTACT [連絡]</h3>
+                <p class="text-lg mb-4">My mainframe is open for connections. Send your transmission to secure the future.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="mailto:shyamsharma3.1415@gmail.com" 
+                       class="text-xl text-pink-400 font-bold cyber-link border-2 border-pink-400 rounded-md px-6 py-3 hover:bg-pink-900/30 transition-all duration-300">
+                        [ GMAIL_CONTACT ]
+                    </a>
+                    <a href="mailto:shyam_pa2508mch222@iitp.ac.in" 
+                       class="text-xl text-pink-400 font-bold cyber-link border-2 border-pink-400 rounded-md px-6 py-3 hover:bg-pink-900/30 transition-all duration-300">
+                        [ IITP_CONTACT ]
+                    </a>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer --><footer class="border-t border-gray-700 pt-6 text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://github.com/Shyamistic" class="cyber-link text-lg" target="_blank">[ GitHub ]</a>
+                <a href="https://www.linkedin.com/in/shyam-sharma-5bb919343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="cyber-link text-lg" target="_blank">[ LinkedIn ]</a>
+            </div>
+            <p>SYSTEM_STATUS: [ONLINE] // DESIGNED BY SHYAM SHARMA // © 2025</p>
+            <p>コードは詩だ (Code is poetry.)</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
+
